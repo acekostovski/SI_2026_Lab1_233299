@@ -1,0 +1,19 @@
+*   29b96a8 Resolve merge conflict in main class
+|\  
+| *   e5a4365 Merge branch 'master' into feature-borrow-book
+| |\  
+| * | fe5077d Implement borrow book
+* | |   2783294 Merge branch 'feature-genre-report'
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 069f99a Implement genre report
+| * | afac840 Implement genre report
+| |/  
+* | 5391327 Merge branch 'master' of https://github.com/acekostovski/SI_2026_Lab1_233299
+|\| 
+| * 347e7b8 Implement book search
+* | da1c5fe Implement book search
+|/  
+* 4db9a59 Add starter code
+* 4334c5d Initial commit
