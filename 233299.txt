@@ -1,2 +1,148 @@
 Aleksandar Kostovski
 aleksandar.kostovski@students.finki.ukim.mk 
+
+1.Git e instaliran
+
+2.Ja smeniv default branch od main vo master vo GitHub settings
+
+3.Kreirav  privaten remote repository na GitHub so ime:
+SI_2026_Lab1_233299
+
+4.Pravam lokalno repozitorium i inicijaliziram lokalen git repozitorium
+mkdir SI_2026_Lab1_233299
+cd SI_2026_Lab1_233299
+git init 
+
+5.Povrzuvanje so remote repozitorium
+git remote add origin https://github.com/acekostovski/SI_2026_Lab1_233299.git
+git remote -v (proverka na remote) 
+
+6.Pravam readme file i pravam commit so porakata "Initial commit"
+touch README.md
+git add README.md - dodava vo staging area
+git commit -m "Initial commit"
+
+
+7.Go dodavam java kodot i pravam commit so porakata "Add starter code"
+touch SI2026Lab1Main.java
+git add SI2026Lab1Main.java - dodava vo staging area 
+git commit -m "Add starter code"
+
+8.Gi prakam commit-ite na GitHub i so -u postavuvam tracking branch
+git push -u origin master
+
+
+DEL 1
+
+9.Kreiram nova granka i se prefrluva na nea
+git checkout -b feature-search-books
+
+10.Implementacija na search book
+git add .
+git commit -m "Implement book search"
+
+11.Push i pull request
+git push origin feature-search-books 
+Kreiran e pull request kon master na GitHub
+
+12.Merge vo master
+git checkout master
+git merge feature-search-books
+
+13.Proverka na merge
+git log --oneline --graph --all (fast forward merge)
+* 347e7b8 Implement book search
+* 4db9a59 Add starter code
+* 4334c5d Initial commit
+
+
+14.Push master
+git push origin master
+
+15.Kreiranje novi granki
+git checkout -b feature-borrow-book
+git checkout master
+git checkout -b feature-genre-report
+
+16.feature-borrow-book
+git add .
+git commit -m "Implement borrow book"
+
+17.Promena vo master
+git checkout master
+git add .
+git commit -m "Update borrow message on master"
+
+18.feature-genre-report
+git checkout feature-genre-report
+git add .
+git commit -m "Implement genre report"
+
+19.Push feature-borrow-book
+git push origin feature-borrow-book
+
+20.Push feature-genre-report
+git push origin feature-genre-report
+
+21.Konflikt imase
+git checkout feature-borrow-book
+git merge master 
+
+22.Pri merge na master vo feature-borrow-book nastana konflikt vo  SI2026Lab1Main.java.
+Upotrebenata merge strategija e recursive merge.
+Konfliktot go resiv racno so izbor na soodvetna verzija od kodot i
+so otstranuvanje na konflikt markerite (<<<<<<, ======, >>>>>>).
+git status
+On branch feature-borrow-book
+nothing to commit, working tree clean
+
+23.Merge feature-genre-report so tip na merge: fast-forward
+Ova spojuvanje bese fast-forward bidejki master nemase novi commits
+git checkout master
+git merge feature-genre-report
+
+24.Merge feature-borrow-book so tip na merge: recursive
+Ova spojuvanje bese recursive bidejki postoea commits vo dvete granki.
+git merge feature-borrow-book
+
+25.Push master
+git push origin master
+
+26.Logs
+git log --oneline --graph --all > logs.txt
+git add logs.txt 233299.txt
+git commit -m "Final commit"
+
+27.Push
+git push origin master
+
+DEL 2
+
+28.Naprajv fork na repository
+
+29.Clone fork
+git clone https://github.com/acekostovski/SI_2026_Lab1_203043.git
+
+30.Kreiranje granka
+git checkout -b 233299-library-update
+
+31.Dodavanje na 233299.txt
+touch 233299.txt
+
+32.Izmena vo java
+Dodadov komentari //Updated by 233299
+
+33.Commit
+git add .
+git commit -m "Add fork contribution"
+
+34.Push
+git push origin 233299-library-update
+
+35.Kreirav pull request
+
+36.233299-FORK ime na pull request-ot
+
+37.Vo opisot na pull request-ot napisav:
+Aleksandar Kostovski
+Fork contribution for lab 1
